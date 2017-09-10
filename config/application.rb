@@ -14,6 +14,10 @@ require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+ActiveSupport::Deprecation.silenced = true
+
+ActiveSupport::Deprecation.behavior = :silence
+
 Bundler.require(*Rails.groups)
 
 module DestinationPlanner
