@@ -18,8 +18,13 @@
   <%= image_tag(@destination.image_url) %>
 
   <div class="row">
-    <h4>Forecast for <%= @destination.name %>:</h4>
-    
+    <h3>Forecast for <%= @destination.name %>:</h3>
+    <% @forecast.days.each do |day| %>
+    <h3><%= day[:date] %></h3>
+    <h4>High: <%= day[:high] %> F</h4>
+    <h4>Low: <%= day[:low] %> F</h4>
+    <h4>Conditions: <%= day[:conditions] %></h4>
+    <% end %>
   </div>
 
   <div class="row">

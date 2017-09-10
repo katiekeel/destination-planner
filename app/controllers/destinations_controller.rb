@@ -10,6 +10,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
+    @forecast = Forecast.find_by_id(params[:id])
   end
 
   # GET /destinations/new
