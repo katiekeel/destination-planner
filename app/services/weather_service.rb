@@ -5,7 +5,6 @@ class WeatherService
   def initialize(zip)
     @zip = zip
     @conn = Faraday.new(url: "http://api.wunderground.com/api/") do |faraday|
-      # faraday.headers["X-API-KEY"] = ENV["WUNDERGROUND_KEY"]
       faraday.adapter Faraday.default_adapter
     end
   end
